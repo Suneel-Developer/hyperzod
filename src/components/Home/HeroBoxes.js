@@ -4,7 +4,7 @@ import Image2 from "../../assets/2.png"
 
 const HeroBoxes = () => {
     return (
-        <section className='px-4 flex flex-col'>
+        <section className='px-4 flex flex-col mb-8 md:mb-0'>
             <div className='max-w-[1310px] mx-auto w-full py-[30px] grid grid-cols-1 md:grid-cols-2 order-2 md:order-1'>
 
                 {/* Become a Driver Box  */}

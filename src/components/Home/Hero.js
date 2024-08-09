@@ -48,7 +48,7 @@ const Hero = () => {
                 </div>
 
                 {/* Login Form Only show on desktop  */}
-                <form className='block lg:hidden min-h-[30vh] w-full'>
+                <form className='block lg:hidden min-h-[60vh] w-full'>
                     <h1 className='text-3xl font-semibold mt-3 mb-1 capitalize'>
                         {t('welcome')}
                     </h1>
