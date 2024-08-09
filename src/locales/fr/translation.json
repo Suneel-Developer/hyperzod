@@ -1,0 +1,13 @@
+{
+    "language": "Langue",
+    "login": "connexion",
+    "welcome": "accueillir",
+    "logintext": "Entrez votre numéro de téléphone pour continuer",
+    "loginsignup": "connexion Ou S&#39;inscrire",
+    "logininputplacholder": "Adresse e-mail ou numéro de téléphone",
+    "logincontinuebtn": "Continuer",
+
+    "homeherotext": "Service de livraison haut de gamme.",
+    "homeherinputplaceholder": "Rechercher un quartier ou un nom de rue",
+    "homeherinputlocatebtn": "Localisez-moi"
+}
