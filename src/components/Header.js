@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 // Components 
 import LanguageSwitcher from './LanguageSwitcher';
 import LoginModal from './LoginModal';
+import SignupModal from './SignupModal';
 
 // Icons 
 import ToggleIcon from '../assets/toggle-icon.svg';
@@ -13,13 +14,16 @@ import LocationIcon from '../assets/location-icon.svg';
 import DownArrow from '../assets/down-arrow.svg';
 import LocateIcon from '../assets/locate-blue-icon.svg';
 import TranslatorIcon from '../assets/language-convter-white-icon.svg';
-import WhiteDownArrow from '../assets/white-down-arrow.svg';
 import { FaAngleDown } from "react-icons/fa6";
+import LoginModalHome from './LoginModalHome';
+import ForgotPasswordModal from './ForgotPasswordModal';
 
 const Header = () => {
-    const { t, i18n } = useTranslation(); // Destructure i18n for language change
+    const { t, i18n } = useTranslation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+    const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+    const [isLoginHomeModalOpen, setIsLoginHomeModalOpen] = useState(false);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [isFocused, setIsFocused] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -35,10 +39,25 @@ const Header = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    // Handle Login Modal 
-    const handleToggleModal = () => {
-        setIsModalOpen(!isModalOpen);
+    // Handle Login Modal
+    const handleToggleLoginModal = () => {
+        setIsLoginModalOpen(!isLoginModalOpen);
     };
+
+    // Handle Signup Modal
+    const handleToggleSignupModal = () => {
+        setIsSignupModalOpen(!isSignupModalOpen);
+    };
+
+
+       // Handle Login Home Modal
+       const handleToggleLoginModalHome = () => {
+        setIsLoginHomeModalOpen(!isLoginHomeModalOpen);
+    };
+
+
+
+
 
     // LanguageSwitcher dropdown for mobile
     useEffect(() => {
@@ -73,7 +92,8 @@ const Header = () => {
                 {/* Login Btn */}
                 <button
                     className='h-[42px] px-4 text-center capitalize text-sm hidden lg:block rounded-lg font-semibold transition-colors duration-500 hover:bg-[#e5e7eb]'
-                    onClick={handleToggleModal}
+                    onClick={handleToggleLoginModal}
+                    // onClick={handleToggleLoginModalHome}
                 >
                     {t('login')}
                 </button>
@@ -180,8 +200,27 @@ const Header = () => {
             )}
 
             {/* Login Modal */}
-            {isModalOpen && (
-                <LoginModal onClose={handleToggleModal} />
+            {isLoginModalOpen && (
+                <LoginModal
+                    onClose={handleToggleLoginModal}
+                    onContinue={() => {
+                        handleToggleLoginModal();
+                        handleToggleSignupModal();
+                    }}
+                />
+            )}
+
+
+            {/* Login Modal After Once Login At Home  */}
+            {/* {isLoginHomeModalOpen && (
+                <LoginModalHome
+                    onClose={handleToggleLoginModalHome}
+                />
+            )} */}
+
+            {/* Signup Modal */}
+            {isSignupModalOpen && (
+                <SignupModal onClose={handleToggleSignupModal} />
             )}
         </header>
     );

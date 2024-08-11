@@ -9,5 +9,24 @@
 
     "homeherotext": "Service de livraison haut de gamme.",
     "homeherinputplaceholder": "Rechercher un quartier ou un nom de rue",
-    "homeherinputlocatebtn": "Localisez-moi"
+    "homeherinputlocatebtn": "Localisez-moi",
+
+
+    "signup": "S'inscrire",
+    "signuptext": "Créez un compte pour pouvoir commander vos articles préférés encore plus rapidement",
+    "name": "Nom",
+    "email": "Adresse e-mail",
+    "phone": "téléphoner",
+    "enterpassword": "Tapez votre mot de passe",
+    "text1": "En vous inscrivant, vous acceptez nos",
+    "privacy-policy": "politique de confidentialité",
+    "alreadyaccount": "Vous avez déjà un compte?",
+
+    "welcomeback": "Content de te revoir! Entrez votre mot de passe pour continuer",
+    "change": "Changement",
+    "forgotpassword": "Mot de passe oublié",
+
+    "forgotasswordtext": "Check your SMS. We have sent you the OTP at",
+    "resend": "Renvoyer",
+    "verifynow": " Vérifiez maintenant"
 }

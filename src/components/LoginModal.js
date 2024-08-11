@@ -2,16 +2,23 @@ import React, { useState } from 'react';
 import CloseIcon from "../assets/close.svg";
 import { useTranslation } from 'react-i18next';
 
-const LoginModal = ({ onClose }) => {
+const LoginModal = ({ onClose, onContinue }) => {
     const { t } = useTranslation();
-    const [inputValue, setInputValue] = useState('');
+    const [email, setEmail] = useState('');
+
+    const handleContinue = (e) => {
+        e.preventDefault(); // Prevent default form submission behavior
+        if (email) {
+            onContinue(); // Trigger the function to open the signup modal
+        }
+    };
 
     return (
         <div>
             <div
                 className='fixed top-0 right-0 w-[550px] h-full bg-white z-50 transition-transform duration-300 transform translate-x-0 p-4'
             >
-                {/* Close Icon  */}
+                {/* Close Icon */}
                 <div className='flex justify-end w-full pb-4'>
                     <button
                         className='w-9 h-9 flex items-center justify-center rounded-full transition-colors duration-300 hover:bg-[#e7e6e6bf]'
@@ -21,8 +28,8 @@ const LoginModal = ({ onClose }) => {
                     </button>
                 </div>
 
-                {/* Form  */}
-                <form>
+                {/* Form */}
+                <form onSubmit={handleContinue}>
                     <h1 className='text-4xl font-semibold mt-3 mb-1 capitalize'>
                         {t('welcome')}
                     </h1>
@@ -39,15 +46,16 @@ const LoginModal = ({ onClose }) => {
                         type="text"
                         placeholder={t('logininputplacholder')}
                         className='mt-6 rounded-[10px] min-h-[50px] px-5 mb-1 border border-[#E5E7EB] placeholder:font-light w-full outline-none transition-all duration-300 hover:border-black focus:border-2 focus:border-[#1976d2] focus:ring-0'
-                        value={inputValue}
-                        onChange={(e) => setInputValue(e.target.value)}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
 
                     <button
+                        type="submit"
                         className='h-[52px] px-5 text-center text-base capitalize rounded-lg mt-12 w-full font-medium transition-colors duration-300'
                         style={{
-                            backgroundColor: inputValue ? '#0b1223' : 'rgba(0,0,0,.12)',
-                            color: inputValue ? '#ffffff' : 'rgba(0,0,0,.26)',
+                            backgroundColor: email ? '#0b1223' : 'rgba(0,0,0,.12)',
+                            color: email ? '#ffffff' : 'rgba(0,0,0,.26)',
                         }}
                     >
                         {t('logincontinuebtn')}

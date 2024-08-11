@@ -11,7 +11,27 @@
 
     "homeherotext": "Bring the store to your door!",
     "homeherinputplaceholder": "Search for area or street name",
-    "homeherinputlocatebtn": "Locate Me"
+    "homeherinputlocatebtn": "Locate Me",
+
+
+    "signup": "Sign Up",
+    "signuptext": "Create an Account so you can order your favourite items even faster",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "enterpassword": "Enter your password",
+    "text1": "By signing up you agree to our",
+    "privacy-policy": "privacy-policy",
+    "alreadyaccount": " Already have an account? ",
+
+
+    "welcomeback": "Welcome back! Enter your password to proceed",
+    "change": "Change",
+    "forgotpassword": "Forgot password",
+
+    "forgotasswordtext": "Vérifiez vos SMS. Nous vous avons envoyé l&#39;OTP à",
+    "resend": "Resend",
+    "verifynow": "Verify Now"
   }
   
   
