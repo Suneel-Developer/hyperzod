@@ -92,8 +92,8 @@ const Header = () => {
                 {/* Login Btn */}
                 <button
                     className='h-[42px] px-4 text-center capitalize text-sm hidden lg:block rounded-lg font-semibold transition-colors duration-500 hover:bg-[#e5e7eb]'
-                    onClick={handleToggleLoginModal}
-                    // onClick={handleToggleLoginModalHome}
+                    // onClick={handleToggleLoginModal}
+                    onClick={handleToggleLoginModalHome}
                 >
                     {t('login')}
                 </button>
@@ -200,7 +200,7 @@ const Header = () => {
             )}
 
             {/* Login Modal */}
-            {isLoginModalOpen && (
+            {/* {isLoginModalOpen && (
                 <LoginModal
                     onClose={handleToggleLoginModal}
                     onContinue={() => {
@@ -208,20 +208,20 @@ const Header = () => {
                         handleToggleSignupModal();
                     }}
                 />
-            )}
+            )} */}
 
 
             {/* Login Modal After Once Login At Home  */}
-            {/* {isLoginHomeModalOpen && (
+            {isLoginHomeModalOpen && (
                 <LoginModalHome
                     onClose={handleToggleLoginModalHome}
                 />
-            )} */}
+            )}
 
             {/* Signup Modal */}
-            {isSignupModalOpen && (
+            {/* {isSignupModalOpen && (
                 <SignupModal onClose={handleToggleSignupModal} />
-            )}
+            )} */}
         </header>
     );
 };
