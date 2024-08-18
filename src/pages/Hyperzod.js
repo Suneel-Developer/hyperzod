@@ -1,10 +1,10 @@
 import React from 'react'
 import Header from '../components/Header'
-import Hero from '../components/Home/Hero';
-import HeroBoxes from '../components/Home/HeroBoxes';
+import Hero from '../components/Mainpage/Hero';
+import HeroBoxes from '../components/Mainpage/HeroBoxes';
 import Footer from '../components/Footer';
 
-const Home = () => {
+const Hyperzod = () => {
   return (
     <>
       <Header />
@@ -15,4 +15,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Hyperzod

@@ -7,9 +7,9 @@ const LoginModal = ({ onClose, onContinue }) => {
     const [email, setEmail] = useState('');
 
     const handleContinue = (e) => {
-        e.preventDefault(); // Prevent default form submission behavior
+        e.preventDefault(); 
         if (email) {
-            onContinue(); // Trigger the function to open the signup modal
+            onContinue(); 
         }
     };
 
