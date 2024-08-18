@@ -139,7 +139,7 @@ const CategoryOneProduct = () => {
                                         <div>
                                             {!addedProduct[flowerpot.id]?.isAdded ? (
                                                 <button
-                                                    className='h-9 px-4 text-xs text-white bg-[#0B1223] rounded flex items-center justify-center gap-1 transition-all duration-500 hover:bg-opacity-90'
+                                                    className='h-9 px-4 text-xs text-white bg-[#0B1223] rounded flex items-center justify-center uppercase gap-1 transition-all duration-500 hover:bg-opacity-90'
                                                     onClick={(e) => {
                                                         e.stopPropagation();
                                                         handleAddClick(flowerpot.id);
