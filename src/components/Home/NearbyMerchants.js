@@ -306,8 +306,8 @@ const NearbyMerchants = () => {
                                 <img src={merchants.categoryimage} alt={merchants.name} className='w-full h-full' />
                             </div>
 
-                            <div className='flex flex-col gap-1'>
-                                <h3 className='leading-[1.2] capitalize truncate font-semibold mb-[1px] text-[15.2px]'>{merchants.name}</h3>
+                            <div className='flex flex-col gap-1 flex-1'>
+                                <h3 className='leading-[1.2] capitalize truncate font-semibold mb-[1px] text-[15.2px] text-balance line-clamp-1 '>{merchants.name}</h3>
                                 <ul className='text-xs flex items-center font-medium'>
                                     <li>{merchants.time}</li>
                                     {merchants.distance && (

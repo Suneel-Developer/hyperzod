@@ -30,7 +30,7 @@ const HalfFameSlider = () => {
                             slidesPerView: 2,
                         },
                         1024: {
-                            slidesPerView: 4,
+                            slidesPerView: 5,
                         },
                     }}
                     modules={[Navigation, Pagination]}
@@ -46,6 +46,8 @@ const HalfFameSlider = () => {
                         HalfFameCategoryBannerThree,
                         HalfFameCategoryBannerFour,
                         HalfFameCategoryBannerFive,
+                        HalfFameCategoryBannerThree,
+
                     ].map((src, index) => (
                         <SwiperSlide key={index}>
                             <div className="rounded-[18px] mb-12 cursor-pointer overflow-hidden">

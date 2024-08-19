@@ -20,12 +20,15 @@ import DontdistrubIcon from "../../assets/dontdistrub-icon.svg"
 import SecurityIcon from "../../assets/security-icon.svg"
 import CashIcon from "../../assets/cash.svg"
 import FileIcon from "../../assets/file-icon.svg"
+import Asap from "../../assets/asap.svg";
+import CalenderIcon from "../../assets/calender-icon.svg";
 
 import { FaAngleRight } from "react-icons/fa6";
 import { IoIosCheckbox } from "react-icons/io";
 import { RxBox } from "react-icons/rx";
 import { IoCaretDownSharp } from "react-icons/io5";
 import { IoLocationSharp } from "react-icons/io5";
+import ScheduleOrder from '../../components/CheckOut/ScheduleOrder';
 
 
 
@@ -161,43 +164,47 @@ const Checkout = () => {
 
                     {/* Left Side  */}
                     <div className='max-w-full lg:max-w-[744px] w-full order-2 lg:order-1'>
-                        <div className='lg:border border-y border-black border-opacity-[12%] pt-4 pb-5 px-4 lg:px-5 lg:mb-7 lg:rounded-lg flex items-center justify-between'>
-                            <p className='text-lg hidden lg:block uppercase font-semibold'>{t('Order Type')}</p>
-                            <div className='relative w-full lg:w-auto' ref={dropdownRef}>
-                                <div
-                                    className='flex items-center cursor-pointer justify-between lg:justify-center lg:w-auto w-full'
-                                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                >
-                                    <div className='flex items-center'>
-                                        <img
-                                            src={selectedOption === 'Delivery' ? DeliveryBus : Pickupmen}
-                                            alt={selectedOption}
-                                            className='w-5 h-5'
-                                        />
-                                        <span className='text-sm pl-4 pr-6 font-semibold'>{selectedOption}</span>
+                        <div className='lg:border border-y border-black border-opacity-[12%] pt-4 pb-5 px-4 lg:px-5 lg:mb-7 lg:rounded-lg'>
+                            <div className='flex items-center justify-between'>
+                                <p className='text-lg hidden lg:block uppercase font-semibold'>{t('Order Type')}</p>
+                                <div className='relative w-full lg:w-auto' ref={dropdownRef}>
+                                    <div
+                                        className='flex items-center cursor-pointer justify-between lg:justify-center lg:w-auto w-full'
+                                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                    >
+                                        <div className='flex items-center'>
+                                            <img
+                                                src={selectedOption === 'Delivery' ? DeliveryBus : Pickupmen}
+                                                alt={selectedOption}
+                                                className='w-5 h-5'
+                                            />
+                                            <span className='text-sm pl-4 pr-6 font-semibold'>{selectedOption}</span>
+                                        </div>
+                                        <IoCaretDownSharp className='text-sm opacity-60' />
                                     </div>
-                                    <IoCaretDownSharp className='text-sm opacity-60' />
-                                </div>
 
-                                {isDropdownOpen && (
-                                    <ul className='absolute elevation-2 rounded w-full top-8 bg-white py-2'>
-                                        <li
-                                            className={`px-3 py-2 text-sm font-medium hover:bg-[#eee] cursor-pointer transition-all duration-500 ${selectedOption === 'Delivery' ? 'bg-[#eee]' : ''
-                                                }`}
-                                            onClick={() => handleOptionClick('Delivery')}
-                                        >
-                                            Delivery
-                                        </li>
-                                        <li
-                                            className={`px-3 py-2 text-sm font-medium hover:bg-[#eee] cursor-pointer transition-all duration-500 ${selectedOption === 'Pickup' ? 'bg-[#eee]' : ''
-                                                }`}
-                                            onClick={() => handleOptionClick('Pickup')}
-                                        >
-                                            Pickup
-                                        </li>
-                                    </ul>
-                                )}
+                                    {isDropdownOpen && (
+                                        <ul className='absolute elevation-2 rounded w-full top-8 bg-white py-2'>
+                                            <li
+                                                className={`px-3 py-2 text-sm font-medium hover:bg-[#eee] cursor-pointer transition-all duration-500 ${selectedOption === 'Delivery' ? 'bg-[#eee]' : ''
+                                                    }`}
+                                                onClick={() => handleOptionClick('Delivery')}
+                                            >
+                                                Delivery
+                                            </li>
+                                            <li
+                                                className={`px-3 py-2 text-sm font-medium hover:bg-[#eee] cursor-pointer transition-all duration-500 ${selectedOption === 'Pickup' ? 'bg-[#eee]' : ''
+                                                    }`}
+                                                onClick={() => handleOptionClick('Pickup')}
+                                            >
+                                                Pickup
+                                            </li>
+                                        </ul>
+                                    )}
+                                </div>
                             </div>
+
+                            <ScheduleOrder />
                         </div>
 
                         <div className='border border-black border-opacity-[12%] mb-7 px-5 py-3 rounded-lg hidden lg:block'>
@@ -401,24 +408,58 @@ const Checkout = () => {
 
 
             {/* Add Address Btn Only Show on Small Devices  */}
-            <div className='bg-white pt-3 pb-6 px-4 fixed bottom-0 z-50 w-full left-0 border-t border-black border-opacity-[12%] block lg:hidden'>
-                <button onClick={handleAddNewAddressModal} className='px-5 bg-[#0B1223] h-[54px] text-white text-base font-semibold btnshadowOne rounded-lg w-full text-center transition-all duration-300 hover:bg-opacity-90'>{t('Add Address')}</button>
+            <div className='bg-white pt-2 pb-5 fixed bottom-0 z-40 w-full left-0 border-t border-black border-opacity-[12%] block lg:hidden'>
+                {/* when address not add  */}
+                {/* <div className='px-2'>
+                    <button onClick={handleAddNewAddressModal} className='px-5 bg-[#0B1223] h-[54px] text-white text-base font-semibold btnshadowOne rounded-lg w-full text-center transition-all duration-300 hover:bg-opacity-90'>{t('Add Address')}</button>
+                </div> */}
+
+                <div className='px-2'>
+                    {/* <div className='flex items-center gap-2 pt-2 pb-[14px] mb-[10px] px-[6px] text-sm font-medium border-b border-black border-opacity-[12%] text-[#0671E3] uppercase cursor-pointer'>
+                        <img src={CalenderIcon} alt="CalenderIcon" />
+                        Tuesday 20 Aug, 01:30 - 02:00
+                    </div> */}
+                    <div className='flex items-center gap-2 pt-2 pb-[14px] mb-[10px] px-[6px] text-sm font-medium border-b border-black border-opacity-[12%]'>
+                        <img src={Asap} alt="Asap" />
+                        ASAP delivery
+                        <p className='text-[#A8A29E]'>(30 mins)</p>
+                    </div>
+
+                    <div className='flex items-center gap-2 pt-1 px-[6px] mb-4 text-sm font-medium'>
+                        <IoLocationSharp />
+                        <p className='text-[#333] truncate line-clamp-1 text-balance flex-1'> 205 City Bakery St, Block 17 Gulistan-e-Johar, Karachi, Karachi City, Sindh, Pakistan</p>
+                    </div>
+
+                    <div
+                        className='bg-[#0B1223] px-3 text-center text-white text-base font-semibold uppercase w-full h-[54px] rounded-lg transition-all duration-500 hover:bg-opacity-90 flex items-center justify-between'
+                    >
+                        <ul className='flex'>
+                            <li className='pr-2 text-xs font-medium text-white'>2 Items</li>
+                            <li className='pl-2 text-xs font-medium text-white border-l-2 border-white'>£63.00</li>
+                        </ul>
+                        <button className='text-white text-xs uppercase font-medium'>Place Order</button>
+                    </div>
+                </div>
             </div>
 
 
-            {isSelectAddressModalOpen && (
-                <SelectAddressModal
-                    onClose={handleSelectAddressModal}
-                    isSelectAddressModalOpen={isSelectAddressModalOpen}
-                />
-            )}
+            {
+                isSelectAddressModalOpen && (
+                    <SelectAddressModal
+                        onClose={handleSelectAddressModal}
+                        isSelectAddressModalOpen={isSelectAddressModalOpen}
+                    />
+                )
+            }
 
-            {isAddNewAddressModalOpen && (
-                <AddNewAddressModal
-                    onClose={handleAddNewAddressModal}
-                    isAddNewAddressModalOpen={isAddNewAddressModalOpen}
-                />
-            )}
+            {
+                isAddNewAddressModalOpen && (
+                    <AddNewAddressModal
+                        onClose={handleAddNewAddressModal}
+                        isAddNewAddressModalOpen={isAddNewAddressModalOpen}
+                    />
+                )
+            }
 
 
 
@@ -426,7 +467,7 @@ const Checkout = () => {
             <div className='mb-[100px] lg:mb-0'>
                 <Footer />
             </div>
-        </section>
+        </section >
     )
 }
 

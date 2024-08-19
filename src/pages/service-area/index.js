@@ -4,6 +4,7 @@ import { LuLocateFixed } from "react-icons/lu";
 import { useNavigate } from 'react-router-dom';
 import { FaLocationDot } from "react-icons/fa6";
 import { useTranslation } from 'react-i18next';
+import MapIcon from "../../assets/map-icon.svg"
 
 
 
@@ -24,12 +25,12 @@ const ServiceArea = () => {
 
             {/* Back Button */}
             <div className="absolute top-5 left-5 flex" >
-                <button onClick={(() => navigate('/home'))} className='w-9 h-9 bg-[#e5e5e5] rounded-lg flex items-center justify-center mr-3 input-shadow'>
+                <button onClick={(() => navigate('/home'))} className='w-12 h-12 bg-gray-500 rounded-lg flex items-center justify-center mr-3 input-shadow'>
                     <FaAngleLeft className='text-base' />
                 </button>
 
-                <button className='w-9 h-9 bg-black rounded-full flex items-center justify-center mr-2 input-shadow'>
-                    <LuLocateFixed className='text-base text-white' />
+                <button className='w-12 h-12 bg-black rounded-full flex items-center justify-center mr-2 input-shadow'>
+                    <img src={MapIcon} alt="MapIcon" />
                 </button>
             </div>
 
@@ -37,11 +38,13 @@ const ServiceArea = () => {
             <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center flex-col">
                 <div className="bg-white max-w-[800px] w-full rounded-t-2xl boxshadowOne">
                     {/* header  */}
-                    <div className='text-xl text-center font-semibold p-2 border-b border-black border-opacity-10'>
+                    <div className='text-xl mb-5 text-center font-semibold p-2 border-b border-black border-opacity-10'>
                         {t('yourlocation')}
                     </div>
 
-                    <div className='px-2 pt-10 pb-2'>
+                    <p className='px-3 font-semibold text-base text-[#000000DE] text-center'>205 City Bakery St, Block 17 Gulistan-e-Johar, Karachi, Karachi City, Sindh, Pakistan</p>
+
+                    <div className='px-2 pb-2 mt-0'>
                         <button className='h-11 w-full bg-black text-sm capitalize mt-5 text-white flex items-center justify-center rounded font-medium gap-2'>
                             <FaLocationDot />
                             {t('setdeliverylocation')}

@@ -17,7 +17,7 @@ const CartBar = () => {
     };
 
     return (
-        <section className='fixed bottom-0 left-0 w-full bg-white z-20 py-2 px-4 hidden lg:block'>
+        <section className='fixed bottom-0 elevation-4 left-0 w-full bg-white z-20 py-2 px-4 block'>
             <div className='max-w-[1320px] w-full mx-auto flex items-center justify-between gap-3'>
                 <div className='flex items-center'>
                     <button onClick={handleCartModal} className='w-12 h-12'><HiShoppingCart className='text-[28px]' /></button>

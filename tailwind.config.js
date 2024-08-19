@@ -13,6 +13,7 @@ module.exports = {
         "gray-700": "rgb(209 213 219)",
         "gray-800": "rgb(230 230 230)",
         "gray-900": "rgb(244, 244, 245)",
+        "black-100": "rgb(66, 66, 66)",
       },
       animation: {
         'slide-up': 'slide-up 0.3s ease-out',
