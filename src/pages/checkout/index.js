@@ -150,7 +150,7 @@ const Checkout = () => {
             <MobileNavigation />
 
             {/* Header for Small Devices  */}
-            <div className='py-[13px] px-4 lg:hidden flex items-center justify-between gap-3 bg-white border-b border-black border-opacity-[12%] h-[60px] sticky top-0 w-full left-0 z-50'>
+            <div className='py-[13px] px-4 lg:hidden flex items-center justify-between gap-3 bg-white border-b border-black border-opacity-[12%] h-[60px] sticky top-0 w-full left-0 z-40'>
                 <button onClick={(() => navigate('/home'))} className='h-9 w-9 bg-[#f5f5f5] rounded-lg flex items-center justify-center'>
                     <FaAngleRight className='rotate-180' />
                 </button>
@@ -184,7 +184,7 @@ const Checkout = () => {
                                     </div>
 
                                     {isDropdownOpen && (
-                                        <ul className='absolute elevation-2 rounded w-full top-8 bg-white py-2 z-40'>
+                                        <ul className='absolute elevation-2 rounded w-full top-8 bg-white py-2 z-30'>
                                             <li
                                                 className={`px-3 py-2 text-sm font-medium hover:bg-[#eee] cursor-pointer transition-all duration-500 ${selectedOption === 'Delivery' ? 'bg-[#eee]' : ''
                                                     }`}
@@ -425,9 +425,10 @@ const Checkout = () => {
                         <p className='text-[#A8A29E]'>(30 mins)</p>
                     </div>
 
-                    <div className='flex items-center gap-2 pt-1 px-[6px] mb-4 text-sm font-medium'>
+                    <div onClick={handleSelectAddressModal}  className='flex items-center gap-2 pt-1 px-[6px] mb-4 text-sm font-medium text-[#333]'>
                         <IoLocationSharp />
-                        <p className='text-[#333] truncate line-clamp-1 text-balance flex-1'> 205 City Bakery St, Block 17 Gulistan-e-Johar, Karachi, Karachi City, Sindh, Pakistan</p>
+                        <p className='text-[#333] truncate line-clamp-1 text-balance flex-1 mr-6'> 205 City Bakery St, Block 17 Gulistan-e-Johar, Karachi, Karachi City, Sindh, Pakistan</p>
+                        <FaAngleRight />
                     </div>
 
                     <div
@@ -458,6 +459,7 @@ const Checkout = () => {
                         onClose={handleAddNewAddressModal}
                         isAddNewAddressModalOpen={isAddNewAddressModalOpen}
                     />
+
                 )
             }
 

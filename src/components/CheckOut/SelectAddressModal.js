@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import CloseIcon from "../../assets/close.svg";
 import { useTranslation } from 'react-i18next';
 import AddNewAddressModal from './AddNewAddressModal';
+import { IoLocationSharp } from "react-icons/io5";
+
 
 
 const SelectAddressModal = ({ isSelectAddressModalOpen, onClose }) => {
@@ -37,6 +39,14 @@ const SelectAddressModal = ({ isSelectAddressModalOpen, onClose }) => {
                     >
                         <img src={CloseIcon} alt="CloseIcon" />
                     </button>
+                </div>
+
+                <div className='bg-[#f3f3f4] p-2 mx-4'>
+                    <h4 className='text-[#000000DE] text-sm mb-1 font-semibold'>Home</h4>
+                    <div className='text-[#bdbdbd] flex items-center gap-1'>
+                        <IoLocationSharp />
+                        <p className='text-sm truncate line-clamp-1 text-balance'>205 City Bakery St, Block 17 Gulistan-e-Johar, Karachi, Karachi City, Sindh, Pakistan</p>
+                    </div>
                 </div>
 
                 <div className='bg-white pt-6 pb-6 px-2 w-full'>
