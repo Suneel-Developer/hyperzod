@@ -31,7 +31,7 @@ const TrackOrder = () => {
           <div className='elevation-2 rounded flex-1 h-fit'>
 
             {/* Header  */}
-            <div className='px-4 lg:px-8 py-4 flex items-center gap-5 bg-white fixed lg:relative top-0 lg:top-auto w-full'>
+            <div className='px-4 lg:px-8 py-4 flex items-center gap-5 bg-white fixed lg:relative top-0 lg:top-auto w-full z-40'>
               <button onClick={(() => navigate('/home'))} className='w-9 h-9 rounded-lg bg-[#eee] flex items-center justify-center text-xl'><MdOutlineChevronLeft /></button>
               <div>
                 <p className='font-semibold text-lg leading-7'>Order #4811</p>
